@@ -1,13 +1,25 @@
-// var name = 'Juan Pablo'
+// Strings
 
-let lastName = 'Pachar Viñan'
+const product = 'Monitor 20 pulgadas'
+const product2 = String('Monitor 24 pulgadas')
 
-const PI = 3.1416
+console.log(product)
+console.log(product2)
 
-console.log(name, lastName, PI)
+const name = 'Juan Pablo Pachar'
 
-// name = 'Anabel Carolina'
+// Cantidad de caracteres en el texto
+console.log(name.length)
 
-lastName = 'Pachar Ortega'
+// Posición de la palabra Pablo
+console.log(name.indexOf('Pablo'))
 
-console.log(name, lastName)
+const lastName = 'Ortega'
+
+// Incluir lastName en name
+console.log(name.includes(lastName))
+
+const productName = 'Monitor de 20 pulgadas'
+const price = 30
+
+console.log(`El producto ${productName} tiene un precio de: ${price}`)
