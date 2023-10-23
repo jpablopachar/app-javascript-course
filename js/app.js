@@ -23,3 +23,26 @@ const productName = 'Monitor de 20 pulgadas'
 const price = 30
 
 console.log(`El producto ${productName} tiene un precio de: ${price}`)
+
+// Eliminar espacios en blanco
+const testText = '    Hola Mundo    '
+
+// Eliminar del inicio
+console.log(testText.trimStart())
+
+// Eliminar del final
+console.log(testText.trimEnd())
+
+// Eliminar del inicio y del final
+console.log(testText.trimStart().trimEnd())
+console.log(testText.trim())
+
+// Reemplazar
+console.log(productName.replace('pulgadas', '"'))
+
+// Cortar
+console.log(productName.slice(8))
+console.log(productName.slice(-11, -3))
+
+// Alternativa a slice
+console.log(productName.substring(0, 10))
