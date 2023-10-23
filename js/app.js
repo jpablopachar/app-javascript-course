@@ -1,80 +1,112 @@
-// Strings
+const number1 = 40
+const number2 = 50.1
+const number3 = -5
+const number4 = 3.141592
+const number5 = 20
 
-const product = 'Monitor 20 pulgadas'
-const product2 = String('Monitor 24 pulgadas')
+let number6 = 10
 
-console.log(product)
-console.log(product2)
+console.log(number1)
+console.log(number2)
+console.log(number3)
+console.log(number4)
 
-const name = 'Juan Pablo Pachar'
+// Operadores aritméticos
 
-// Cantidad de caracteres en el texto
-console.log(name.length)
+console.log(number1 + number5)
+console.log(number1 - number5)
+console.log(number1 * number5)
+console.log(number1 / number5)
+console.log(number1 % number5)
 
-// Posición de la palabra Pablo
-console.log(name.indexOf('Pablo'))
+// Redondear números
+console.log(Math.round(number2))
 
-const lastName = 'Ortega'
+// Redondear hacia arriba
+console.log(Math.ceil(number2))
 
-// Incluir lastName en name
-console.log(name.includes(lastName))
+// Redondear hacia abajo
+console.log(Math.floor(number2))
 
-const productName = 'Monitor de 20 pulgadas'
-const price = 30
+// Raíz cuadrada
+console.log(Math.sqrt(number1))
 
-console.log(`El producto ${productName} tiene un precio de: ${price}`)
+// Absoluto
+console.log(Math.abs(number3))
 
-// Eliminar espacios en blanco
-const testText = '    Hola Mundo    '
+// Potencia
+console.log(Math.pow(number5, 3))
 
-// Eliminar del inicio
-console.log(testText.trimStart())
+// Número aleatorio
+console.log(Math.random())
 
-// Eliminar del final
-console.log(testText.trimEnd())
+// Orden de las operaciones
+console.log(number1 + number5 + number1)
 
-// Eliminar del inicio y del final
-console.log(testText.trimStart().trimEnd())
-console.log(testText.trim())
+console.log((number1 + number5) * number1)
 
-// Reemplazar
-console.log(productName.replace('pulgadas', '"'))
+console.log((number1 + number5) * 0.2)
 
-// Cortar
-console.log(productName.slice(8))
-console.log(productName.slice(-11, -3))
+console.log((number1 + number5) * number2)
 
-// Alternativa a slice
-console.log(productName.substring(0, 10))
+// Incremento
 
-// Obtener la primera letra de un texto
-const user = 'Juan'
+number6++
 
-console.log(user.substring(0, 1))
-console.log(user.charAt(0))
+console.log(number6)
 
-// Repetir una cadena de texto
-const text = `${user} `.repeat(3)
+// Decremento
 
-console.log(text)
+number6--
 
-// Dividir un string
-console.log(productName.split(' '))
+console.log(number6)
 
-const technologies = 'JavaScript, React, Vue, Angular'
+// Operadores de asignación
 
-console.log(technologies.split(', '))
+number6 += 5
 
-const tweet = 'Aprendiendo en el curso de Javascript #Netby'
+console.log(number6)
 
-console.log(tweet.split('#'))
+number6 -= 5
 
-// Convertir a mayúsculas
-console.log(productName.toUpperCase())
+console.log(number6)
 
-// Convertir a minúsculas
-console.log(productName.toLowerCase())
+number6 *= 5
 
-// Convertir un número a string
+console.log(number6)
 
-console.log(price.toString())
+number6 /= 5
+
+console.log(number6)
+
+// Operadores de comparación
+
+console.log(number1 === number5)
+
+console.log(number1 !== number5)
+
+console.log(number1 > number5)
+
+console.log(number1 < number5)
+
+console.log(number1 >= number5)
+
+console.log(number1 <= number5)
+
+// Operaciones con strings
+
+const text1 = '20'
+const text2 = '20.1'
+const text3 = 'Uno'
+
+console.log(Number.parseInt(text1))
+
+console.log(Number.parseFloat(text2))
+
+// Si el string no es un número, devuelve NaN
+console.log(Number.parseInt(text3))
+
+// Revisa si un número es entero
+console.log(Number.isInteger(text1))
+
+console.log(Number.isInteger(20))
