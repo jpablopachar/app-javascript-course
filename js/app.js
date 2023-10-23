@@ -1,112 +1,30 @@
 const number1 = 40
-const number2 = 50.1
-const number3 = -5
-const number4 = 3.141592
-const number5 = 20
+const number2 = 20
+const text1 = '40'
+const text2 = 'juan'
+const text3 = 'JUAN'
+const value = null
 
-let number6 = 10
+let number3
 
-console.log(number1)
-console.log(number2)
-console.log(number3)
-console.log(number4)
+// Revisar si dos números son iguales
+console.log(number1 === number2)
 
-// Operadores aritméticos
+// Revisar si dos números son diferentes
+console.log(number1 !== number2)
 
-console.log(number1 + number5)
-console.log(number1 - number5)
-console.log(number1 * number5)
-console.log(number1 / number5)
-console.log(number1 % number5)
+// Revisar el tipo de dato
 
-// Redondear números
-console.log(Math.round(number2))
+console.log(typeof number1)
 
-// Redondear hacia arriba
-console.log(Math.ceil(number2))
+console.log(typeof text1)
 
-// Redondear hacia abajo
-console.log(Math.floor(number2))
+console.log(typeof number3)
 
-// Raíz cuadrada
-console.log(Math.sqrt(number1))
+console.log(typeof value)
 
-// Absoluto
-console.log(Math.abs(number3))
+// Revisar si un string es diferente a otro
 
-// Potencia
-console.log(Math.pow(number5, 3))
+console.log(text2 === text3)
 
-// Número aleatorio
-console.log(Math.random())
-
-// Orden de las operaciones
-console.log(number1 + number5 + number1)
-
-console.log((number1 + number5) * number1)
-
-console.log((number1 + number5) * 0.2)
-
-console.log((number1 + number5) * number2)
-
-// Incremento
-
-number6++
-
-console.log(number6)
-
-// Decremento
-
-number6--
-
-console.log(number6)
-
-// Operadores de asignación
-
-number6 += 5
-
-console.log(number6)
-
-number6 -= 5
-
-console.log(number6)
-
-number6 *= 5
-
-console.log(number6)
-
-number6 /= 5
-
-console.log(number6)
-
-// Operadores de comparación
-
-console.log(number1 === number5)
-
-console.log(number1 !== number5)
-
-console.log(number1 > number5)
-
-console.log(number1 < number5)
-
-console.log(number1 >= number5)
-
-console.log(number1 <= number5)
-
-// Operaciones con strings
-
-const text1 = '20'
-const text2 = '20.1'
-const text3 = 'Uno'
-
-console.log(Number.parseInt(text1))
-
-console.log(Number.parseFloat(text2))
-
-// Si el string no es un número, devuelve NaN
-console.log(Number.parseInt(text3))
-
-// Revisa si un número es entero
-console.log(Number.isInteger(text1))
-
-console.log(Number.isInteger(20))
+console.log(number1 !== text1)
