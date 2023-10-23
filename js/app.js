@@ -46,3 +46,35 @@ console.log(productName.slice(-11, -3))
 
 // Alternativa a slice
 console.log(productName.substring(0, 10))
+
+// Obtener la primera letra de un texto
+const user = 'Juan'
+
+console.log(user.substring(0, 1))
+console.log(user.charAt(0))
+
+// Repetir una cadena de texto
+const text = `${user} `.repeat(3)
+
+console.log(text)
+
+// Dividir un string
+console.log(productName.split(' '))
+
+const technologies = 'JavaScript, React, Vue, Angular'
+
+console.log(technologies.split(', '))
+
+const tweet = 'Aprendiendo en el curso de Javascript #Netby'
+
+console.log(tweet.split('#'))
+
+// Convertir a mayúsculas
+console.log(productName.toUpperCase())
+
+// Convertir a minúsculas
+console.log(productName.toLowerCase())
+
+// Convertir un número a string
+
+console.log(price.toString())
