@@ -1,154 +1,87 @@
-const product1 = {
-  name: 'Mochila Adidas',
-  price: 50,
-  isAvailable: true
+// Declaración de función
+function sum1 () {
+  console.log(5 + 5)
 }
 
-// Acceder a los valores de un objeto
-console.log(product1.name)
-console.log(product1.price)
+sum1()
 
-// Modificar valores de un objeto
-product1.price = 60
-
-console.log(product1)
-
-// Agregar propiedades a un objeto
-product1.image = 'image.jpg'
-
-console.log(product1)
-
-// Eliminar propiedades de un objeto
-delete product1.isAvailable
-
-console.log(product1)
-
-const price1 = product1.price
-
-console.log(price1)
-
-// Destructuring
-const { price, image } = product1
-
-console.log(image)
-
-console.log(price)
-
-const product2 = {
-  name: 'Monitor de 20 pulgadas',
-  price: 180,
-  isAvailable: true,
-  image: {
-    url: 'image.jpg'
-  }
+// Declaración de función con parámetros
+function sum2 (a, b) {
+  console.log(a + b)
 }
 
-const { image: { url } } = product2
+sum2(2, 2)
 
-console.log(url)
+// Declaración de función con parámetros y retorno
+function sum3 (a, b) {
+  return a + b
+}
 
-const product3 = {
-  name: 'Monitor de 20 pulgadas',
-  price: 180,
-  isAvailable: true,
-  image: {
-    url: 'image.jpg',
-    dimensions: {
-      width: 100,
-      height: 100
+console.log(sum3(3, 3))
+
+// Expresión de función
+const sum4 = function () {
+  console.log(4 + 4)
+}
+
+sum4()
+
+// Diferencia entre una función y un método
+const number1 = '5'
+const number2 = 10
+
+console.log(parseInt(number1))
+
+console.log(number2.toString())
+
+// Comunicación entre funciones
+function start () {
+  console.log('Inicio')
+
+  middle()
+}
+
+function middle () {
+  console.log('Medio')
+
+  end()
+}
+
+function end () {
+  console.log('Final')
+}
+
+start()
+
+// Funciones en un objeto y array functions
+const myDailyRoutine = {
+  standUp: function () {
+    console.log('Levantarse')
+  },
+  selectRoutine: (routine) => {
+    switch (routine) {
+      case 1:
+        console.log('Tomar una ducha')
+        break
+      case 2:
+        console.log('Desayunar')
+        break
+      case 3:
+        console.log('Orar a Dios')
+        break
+      default:
+        console.log('Ir al trabajo')
+        break
     }
   },
-  information: {
-    location: {
-      city: 'CDMX',
-      country: 'México',
-      zipCode: 12345,
-      address: {
-        street: 'Calle 123',
-        number: 12
-      }
-    }
+  returnHome: () => {
+    return 'Regresar a casa'
   }
 }
 
-const { information: { location: { address: { street } } } } = product3
+myDailyRoutine.standUp()
+myDailyRoutine.selectRoutine(3)
+myDailyRoutine.selectRoutine(2)
+myDailyRoutine.selectRoutine()
 
-console.log(street)
-
-// Congelar un objeto para que no se pueda modificar
-const product4 = {
-  name: 'Monitor de 20 pulgadas',
-  price: 50
-}
-
-Object.freeze(product4)
-
-product4.image = 'image.jpg'
-
-console.log(product4)
-
-// Comprobar si un objeto está congelado
-console.log(Object.isFrozen(product4))
-
-// Sellar un objeto para que no se puedan agregar ni eliminar propiedades
-const product5 = {
-  name: 'Monitor de 20 pulgadas',
-  price: 50,
-  isAvailable: true
-}
-
-Object.seal(product5)
-
-product5.isAvailable = false
-
-console.log(product5)
-
-// Comprobar si un objeto está sellado
-console.log(Object.isSealed(product5))
-
-const product6 = {
-  name: 'Monitor de 20 pulgadas',
-  price: 50,
-  isAvailable: true
-}
-
-const imageInfo = {
-  url: 'image.jpg',
-  dimensions: {
-    width: 100,
-    height: 100
-  }
-}
-
-// Método assign
-const result1 = Object.assign(product6, imageInfo)
-
-console.log(result1)
-
-// Spread Operator
-const result2 = { ...product6, ...imageInfo }
-
-console.log(result2)
-
-const product7 = {
-  name: 'Monitor de 20 pulgadas',
-  price: 50,
-  isAvailable: true,
-  viewInfo: function () {
-    console.log(`El producto ${this.name} tiene un precio de ${this.price}`)
-  }
-}
-
-product7.viewInfo()
-
-// Obtener las llaves de un objeto
-console.log(Object.keys(product6))
-
-// Obtener los valores de un objeto
-console.log(Object.values(product6))
-
-// Obtener las llaves y valores de un objeto
-console.log(Object.entries(product6))
-
-// Comprobar si un objeto tiene una propiedad
-console.log(Object.prototype.hasOwnProperty.call(product6, 'name'))
+console.log(myDailyRoutine.returnHome())
