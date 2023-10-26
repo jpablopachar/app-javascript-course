@@ -1,52 +1,70 @@
-const cant = 100
-const total = 500
-const card = false
-const check = false
-const paymentMethod = 'cash'
+const phones = [
+  { name: 'Samsung s23 ultra', price: 1500 },
+  { name: 'Iphone 15 pro max', price: 1700 },
+  { name: 'Xiaomi 13 ultra', price: 1300 },
+  { name: 'Google Pixel 8 Pro', price: 1300 },
+  { name: 'Huawei Mate 60 pro', price: 1400 }
+]
 
-let message = ''
+console.log(phones)
 
-// Comparadores === !== > < >= <= && ||
-if (cant >= total) {
-  console.log('Los fondos son suficientes')
-} else if (card) {
-  console.log('El cliente tiene tarjeta')
-} else if (check) {
-  console.log('El cliente tiene cheque')
-} else {
-  console.log('Fondos insuficientes')
+// For loop
+for (let i = 0; i < phones.length; i++) {
+  console.log(phones[i])
+
+  /* if (phones[i].price === 1300) {
+    console.log(`Escogí un ${phones[i].name}`)
+    break
+  } */
 }
 
-// Ternario
-message = cant >= total ? 'Los fondos son suficientes' : 'Fondos insuficientes'
+console.log('---------------------------')
 
-console.log(message)
+// While loop
+let i = 0
 
-// Switch
-switch (paymentMethod) {
-  case 'cash':
-    console.log('El cliente pagó en efectivo')
-    break
-  case 'card':
-    console.log('El cliente pagó con tarjeta')
-    break
-  case 'check':
-    console.log('El cliente pagó con cheque')
-    break
-  default:
-    console.log('No se ha utilizado un método de pago válido')
-    break
+while (i < phones.length) {
+  console.log(phones[i])
+  i++
 }
 
-// Literal Object
+console.log('---------------------------')
 
-const paymentMethods = {
-  cash: 'El cliente pagó en efectivo',
-  card: 'El cliente pagó con tarjeta',
-  check: 'El cliente pagó con cheque',
-  default: 'No se ha utilizado un método de pago válido'
+// Do while loop
+let j = 0
+
+do {
+  console.log(phones[j])
+
+  j++
+} while (j < phones.length)
+
+console.log('---------------------------')
+
+// For each loop
+phones.forEach((phone) => {
+  console.log(phone)
+})
+
+console.log('---------------------------')
+
+// Map loop
+const newPhones = phones.map((phone) => {
+  return phone
+})
+
+console.log(newPhones)
+
+console.log('---------------------------')
+
+// For of loop
+for (const phone of phones) {
+  console.log(phone)
 }
 
-message = paymentMethods[paymentMethod] || paymentMethods.default
+console.log('---------------------------')
 
-console.log(message)
+// For in loop
+for (const phone in phones) {
+  console.log(phones[phone])
+}
