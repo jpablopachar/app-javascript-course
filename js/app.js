@@ -1,70 +1,36 @@
 const phones = [
-  { name: 'Samsung s23 ultra', price: 1500 },
-  { name: 'Iphone 15 pro max', price: 1700 },
-  { name: 'Xiaomi 13 ultra', price: 1300 },
-  { name: 'Google Pixel 8 Pro', price: 1300 },
-  { name: 'Huawei Mate 60 pro', price: 1400 }
+  { name: 'Samsung s23 ultra', price: 1500, mark: 'Samsung' },
+  { name: 'Iphone 15 pro max', price: 1700, mark: 'Apple' },
+  { name: 'Xiaomi 13 ultra', price: 1300, mark: 'Xiaomi' },
+  { name: 'Google Pixel 8 Pro', price: 1300, mark: 'Google' },
+  { name: 'Huawei Mate 60 pro', price: 1400, mark: 'Huawei' },
+  { name: 'Xiaomi Poco F3', price: 350, mark: 'Xiaomi' }
 ]
+const markToSearch = 'Apple'
+const markToFiler = 'Xiaomi'
+const expensivePrice = 1000
 
-console.log(phones)
+// Some: Devuelve true si al menos un elemento cumple la condición, en caso contrario devuelve false
+const exists = phones.some(phone => phone.mark === markToSearch)
 
-// For loop
-for (let i = 0; i < phones.length; i++) {
-  console.log(phones[i])
+console.log(`La marca del teléfono ${exists ? 'está disponible' : 'no está disponible'}`)
 
-  /* if (phones[i].price === 1300) {
-    console.log(`Escogí un ${phones[i].name}`)
-    break
-  } */
-}
+// Find Index: Devuelve el índice del primer elemento que cumpla la condición, en caso de no encontrarlo devuelve -1
+const index = phones.findIndex(phone => phone.mark === markToSearch)
 
-console.log('---------------------------')
+console.log(`El marca del teléfono ${index !== -1 ? `se encuentra en la posición ${index}` : 'no se ha encontrado'}`)
 
-// While loop
-let i = 0
+// Reduce: Devuelve un valor único a partir de un array
+const total = phones.reduce((accumulator, phone) => accumulator + phone.price, 0)
 
-while (i < phones.length) {
-  console.log(phones[i])
-  i++
-}
+console.log(`El precio total de los teléfonos es de $${total}`)
 
-console.log('---------------------------')
+// Filter: Devuelve un array con los elementos que cumplan la condición, en caso de no encontrar ninguno devuelve un array vacío
+const filteredPhones = phones.filter(phone => phone.mark === markToFiler)
 
-// Do while loop
-let j = 0
+console.log(`Los teléfonos de la marca ${markToFiler} son: ${filteredPhones.map(phone => phone.name).join(', ')}`)
 
-do {
-  console.log(phones[j])
+// Every: Devuelve true si todos los elementos cumplen la condición, en caso contrario devuelve false
+const allPhonesAreExpensive = phones.every(phone => phone.price > expensivePrice)
 
-  j++
-} while (j < phones.length)
-
-console.log('---------------------------')
-
-// For each loop
-phones.forEach((phone) => {
-  console.log(phone)
-})
-
-console.log('---------------------------')
-
-// Map loop
-const newPhones = phones.map((phone) => {
-  return phone
-})
-
-console.log(newPhones)
-
-console.log('---------------------------')
-
-// For of loop
-for (const phone of phones) {
-  console.log(phone)
-}
-
-console.log('---------------------------')
-
-// For in loop
-for (const phone in phones) {
-  console.log(phones[phone])
-}
+console.log(`¿Todos los teléfonos superan los $${expensivePrice}? ${allPhonesAreExpensive ? 'Sí' : 'No'}`)
