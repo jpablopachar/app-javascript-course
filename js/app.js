@@ -1,36 +1,61 @@
-const phones = [
-  { name: 'Samsung s23 ultra', price: 1500, mark: 'Samsung' },
-  { name: 'Iphone 15 pro max', price: 1700, mark: 'Apple' },
-  { name: 'Xiaomi 13 ultra', price: 1300, mark: 'Xiaomi' },
-  { name: 'Google Pixel 8 Pro', price: 1300, mark: 'Google' },
-  { name: 'Huawei Mate 60 pro', price: 1400, mark: 'Huawei' },
-  { name: 'Xiaomi Poco F3', price: 350, mark: 'Xiaomi' }
-]
-const markToSearch = 'Apple'
-const markToFiler = 'Xiaomi'
-const expensivePrice = 1000
+// Fecha actual
+const currentDate = new Date()
 
-// Some: Devuelve true si al menos un elemento cumple la condición, en caso contrario devuelve false
-const exists = phones.some(phone => phone.mark === markToSearch)
+console.log(currentDate)
 
-console.log(`La marca del teléfono ${exists ? 'está disponible' : 'no está disponible'}`)
+// Año actual
+console.log(currentDate.getFullYear())
 
-// Find Index: Devuelve el índice del primer elemento que cumpla la condición, en caso de no encontrarlo devuelve -1
-const index = phones.findIndex(phone => phone.mark === markToSearch)
+// Mes actual
+console.log(currentDate.getMonth())
 
-console.log(`El marca del teléfono ${index !== -1 ? `se encuentra en la posición ${index}` : 'no se ha encontrado'}`)
+// Día actual
+console.log(currentDate.getDate())
 
-// Reduce: Devuelve un valor único a partir de un array
-const total = phones.reduce((accumulator, phone) => accumulator + phone.price, 0)
+// Hora actual
+console.log(currentDate.getHours())
 
-console.log(`El precio total de los teléfonos es de $${total}`)
+// Minutos actual
+console.log(currentDate.getMinutes())
 
-// Filter: Devuelve un array con los elementos que cumplan la condición, en caso de no encontrar ninguno devuelve un array vacío
-const filteredPhones = phones.filter(phone => phone.mark === markToFiler)
+// Segundos actual
+console.log(currentDate.getSeconds())
 
-console.log(`Los teléfonos de la marca ${markToFiler} son: ${filteredPhones.map(phone => phone.name).join(', ')}`)
+// Mili segundos actual
+console.log(currentDate.getMilliseconds())
 
-// Every: Devuelve true si todos los elementos cumplen la condición, en caso contrario devuelve false
-const allPhonesAreExpensive = phones.every(phone => phone.price > expensivePrice)
+// Día de la semana actual
+console.log(currentDate.getDay())
 
-console.log(`¿Todos los teléfonos superan los $${expensivePrice}? ${allPhonesAreExpensive ? 'Sí' : 'No'}`)
+// Fecha actual en formato ISO
+console.log(currentDate.toISOString())
+
+// Fecha actual en formato UTC
+console.log(currentDate.toUTCString())
+
+// Fecha actual en formato local
+console.log(currentDate.toLocaleDateString())
+
+// Fecha actual en formato local
+console.log(currentDate.toLocaleTimeString())
+
+// Fecha actual en formato local
+console.log(currentDate.getTime())
+
+// Establecer año
+console.log(currentDate.setFullYear(2025))
+
+console.log(currentDate)
+
+console.log('------------------------')
+
+// https://moment.github.io/luxon/#/tour -> Documentación de Luxon
+
+// eslint-disable-next-line no-undef
+const dt = luxon.DateTime
+
+const dateEs = dt.now().setLocale('es')
+
+console.log(dateEs.toFormat('cccc, dd - LLLL - yyyy, h:mm:ss a'))
+
+console.log(dateEs.plus({ day: 3 }).toFormat('cccc, dd - LLLL - yyyy'))
