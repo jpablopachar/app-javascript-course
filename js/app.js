@@ -1,71 +1,55 @@
-const shoppingCart = new Set()
+const client = new Map()
 
-// Agregar valores al set
-shoppingCart.add('Manzanas')
-shoppingCart.add('Carnes')
-shoppingCart.add('Cereal')
-shoppingCart.add('Shampoo')
+// Agregar un elemento
+client.set('name', 'Juan')
+client.set('type', 'Premium')
+client.set('balance', 3000)
 
-console.log(shoppingCart)
+console.log(client)
 
-// Tamaño del set
-console.log(shoppingCart.size)
+// Obtener el tamaño del Map
+console.log(client.size)
 
-// Iterar sobre un set
-shoppingCart.forEach((product) => {
-  console.log(product)
+// Comprobar que un valor existe
+console.log(client.has('name'))
+
+// Iterar en el Map
+client.forEach((data, index) => {
+  console.log(`${index}: ${data}`)
 })
 
-// No permite duplicados
-shoppingCart.add('Manzanas')
+// Obtener un valor
+console.log(client.get('name'))
 
-console.log(shoppingCart)
+// Borrar un elemento
+client.delete('balance')
 
-// Comprobar si un valor existe
-console.log(shoppingCart.has('Manzanas'))
+console.log(client)
 
-// Eliminar un valor
-shoppingCart.delete('Shampoo')
+// Limpiar el Map
+client.clear()
 
-console.log(shoppingCart)
+console.log(client)
 
-// Limpiar el set
-shoppingCart.clear()
+console.log('---------------------------')
 
-console.log(shoppingCart)
+// WeakMap
+const product = { id: 6, name: 'Camisa' }
 
-console.log('------------------------')
+const weakMap = new WeakMap()
 
-// Eliminar Ids duplicados
+// Agregar un elemento
+weakMap.set(product, 'Disponible')
 
-const numbers = [10, 20, 30, 40, 50, 10, 20]
+console.log(weakMap)
 
-const numbersSet = new Set(numbers)
+// Comprobar que un valor existe
+console.log(weakMap.has(product))
 
-console.log(numbersSet)
+// Obtener un valor
+console.log(weakMap.get(product))
 
-// WeakSet
-const client = {
-  name: 'Juan',
-  balance: 500
-}
+// Borrar un elemento
+weakMap.delete(product)
 
-const car = {
-  model: 'Camaro',
-  year: 1969,
-  price: 500
-}
-
-const weakSet = new WeakSet()
-
-weakSet.add(client)
-weakSet.add(car)
-
-console.log(weakSet)
-
-// No se puede iterar ni conocer el tamaño
-
-// Remueve el elemento
-weakSet.delete(car)
-
-console.log(weakSet)
+console.log(weakMap)
