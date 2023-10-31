@@ -1,61 +1,71 @@
-// Fecha actual
-const currentDate = new Date()
+const shoppingCart = new Set()
 
-console.log(currentDate)
+// Agregar valores al set
+shoppingCart.add('Manzanas')
+shoppingCart.add('Carnes')
+shoppingCart.add('Cereal')
+shoppingCart.add('Shampoo')
 
-// Año actual
-console.log(currentDate.getFullYear())
+console.log(shoppingCart)
 
-// Mes actual
-console.log(currentDate.getMonth())
+// Tamaño del set
+console.log(shoppingCart.size)
 
-// Día actual
-console.log(currentDate.getDate())
+// Iterar sobre un set
+shoppingCart.forEach((product) => {
+  console.log(product)
+})
 
-// Hora actual
-console.log(currentDate.getHours())
+// No permite duplicados
+shoppingCart.add('Manzanas')
 
-// Minutos actual
-console.log(currentDate.getMinutes())
+console.log(shoppingCart)
 
-// Segundos actual
-console.log(currentDate.getSeconds())
+// Comprobar si un valor existe
+console.log(shoppingCart.has('Manzanas'))
 
-// Mili segundos actual
-console.log(currentDate.getMilliseconds())
+// Eliminar un valor
+shoppingCart.delete('Shampoo')
 
-// Día de la semana actual
-console.log(currentDate.getDay())
+console.log(shoppingCart)
 
-// Fecha actual en formato ISO
-console.log(currentDate.toISOString())
+// Limpiar el set
+shoppingCart.clear()
 
-// Fecha actual en formato UTC
-console.log(currentDate.toUTCString())
-
-// Fecha actual en formato local
-console.log(currentDate.toLocaleDateString())
-
-// Fecha actual en formato local
-console.log(currentDate.toLocaleTimeString())
-
-// Fecha actual en formato local
-console.log(currentDate.getTime())
-
-// Establecer año
-console.log(currentDate.setFullYear(2025))
-
-console.log(currentDate)
+console.log(shoppingCart)
 
 console.log('------------------------')
 
-// https://moment.github.io/luxon/#/tour -> Documentación de Luxon
+// Eliminar Ids duplicados
 
-// eslint-disable-next-line no-undef
-const dt = luxon.DateTime
+const numbers = [10, 20, 30, 40, 50, 10, 20]
 
-const dateEs = dt.now().setLocale('es')
+const numbersSet = new Set(numbers)
 
-console.log(dateEs.toFormat('cccc, dd - LLLL - yyyy, h:mm:ss a'))
+console.log(numbersSet)
 
-console.log(dateEs.plus({ day: 3 }).toFormat('cccc, dd - LLLL - yyyy'))
+// WeakSet
+const client = {
+  name: 'Juan',
+  balance: 500
+}
+
+const car = {
+  model: 'Camaro',
+  year: 1969,
+  price: 500
+}
+
+const weakSet = new WeakSet()
+
+weakSet.add(client)
+weakSet.add(car)
+
+console.log(weakSet)
+
+// No se puede iterar ni conocer el tamaño
+
+// Remueve el elemento
+weakSet.delete(car)
+
+console.log(weakSet)
