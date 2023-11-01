@@ -11,11 +11,17 @@ document.getElementById('books-cards').addEventListener('click', (event) => {
   const bookController = new BookController()
 
   if (event.target.classList.contains('delete')) {
-    const id = event.target.getAttribute('_id')
+    if (window.confirm('¿Estás seguro de que deseas eliminar este usuario?')) {
+      const id = event.target.getAttribute('_id')
 
-    bookController.deleteBook(id)
+      bookController.deleteBook(id)
 
-    bookController.renderMessage('Libro eliminado correctamente', 'success', 3000)
+      bookController.renderMessage(
+        'Libro eliminado correctamente',
+        'success',
+        3000
+      )
+    }
   }
 
   if (event.target.classList.contains('edit')) {

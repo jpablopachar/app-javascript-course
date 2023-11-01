@@ -7,6 +7,12 @@ const btnCancel = document.getElementById('btn-cancel')
 bookForm.addEventListener('submit', (event) => {
   event.preventDefault()
 
+  if (!bookForm.checkValidity()) {
+    event.stopPropagation()
+  }
+
+  bookForm.classList.add('was-validated')
+
   const id = bookForm.id.value.trim()
   const title = bookForm.title.value.trim()
   const author = bookForm.author.value.trim()
@@ -17,8 +23,8 @@ bookForm.addEventListener('submit', (event) => {
 
   if (title === '' || author === '' || isbn === '') {
     bookController.renderMessage(
-      'Existen campos incorrectos',
-      'error   ',
+      'Existen campos vacíos en el formulario',
+      'danger',
       3000
     )
 

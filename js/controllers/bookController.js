@@ -43,7 +43,6 @@ export class BookController {
     await bookService.postBook(book)
 
     this.clearBookForm()
-
     this.getBooks()
   }
 
@@ -51,7 +50,6 @@ export class BookController {
     await bookService.putBook(book)
 
     this.clearBookForm()
-
     this.getBooks()
   }
 
@@ -83,20 +81,23 @@ export class BookController {
   }
 
   renderMessage (message, colorMessage, secondsToRemove) {
+    const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+
     const div = document.createElement('div')
 
-    div.className = `message ${colorMessage}`
+    div.innerHTML = `
+      <div class="alert alert-${colorMessage} alert-dismissible" role="alert">
+        <div>${message}</div>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    `
 
-    div.appendChild(document.createTextNode(message))
-
-    const container = document.querySelector('.col-md-4')
-
-    const bookForm = document.querySelector('#book-form')
-
-    container.insertBefore(div, bookForm)
+    alertPlaceholder.append(div)
 
     setTimeout(() => {
-      document.querySelector('.message').remove()
+      const alert = document.querySelector('.alert')
+
+      if (alert) alert.remove()
     }, secondsToRemove)
   }
 
