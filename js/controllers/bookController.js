@@ -102,10 +102,11 @@ export class BookController {
   }
 
   clearBookForm () {
-    document.getElementById('book-form').reset()
     document.getElementById('id').value = ''
-    document.getElementById('title').focus()
     document.getElementById('btn-submit').textContent = 'Agregar Libro'
+
+    document.getElementById('book-form').reset()
+    document.getElementById('title').focus()
     document.getElementById('btn-cancel').classList.add('d-none')
   }
 }
