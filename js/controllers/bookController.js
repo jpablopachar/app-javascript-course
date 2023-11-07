@@ -19,17 +19,17 @@ export class BookController {
         <div class="card m-2">
           <div class="row no-gutters">
             <div class="col-md-4">
-              <img src="${book.img}" class="img-fluid h-100 w-100" alt="" />
+              <img src="${book.img}" class="img-fluid" style="width: 250px; height: 350px" alt="" />
             </div>
             <div class="col-md-8">
-              <div class="px-2">
+              <div class="px-2 pt-2">
                 <header class="d-flex justify-content-between">
                   <h4 class="card-title">${book.title}</h4>
                   <a href="#" class="btn btn-danger delete" _id="${book.id}">Delete</a>
                 </header>
                 <p class="card-text">${book.author}</p>
               </div>
-              <button _id="${book.id}" type="button" class="btn btn-primary edit">Editar</button>
+              <button _id="${book.id}" type="button" class="btn btn-primary edit mt-2">Editar</button>
             </div>
           </div>
         </div>

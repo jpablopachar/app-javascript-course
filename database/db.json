@@ -20,6 +20,34 @@
       "isbn": "50505050",
       "img": "https://i.pinimg.com/originals/80/a5/1a/80a51a0b7293317a273207178aa12358.jpg",
       "id": 3
+    },
+    {
+      "title": "Prueba libro 1",
+      "author": "Autor 1",
+      "isbn": "3025252",
+      "img": "https://i.pinimg.com/originals/80/a5/1a/80a51a0b7293317a273207178aa12358.jpg",
+      "id": 4
+    },
+    {
+      "title": "Prueba libro 2",
+      "author": "Autor 2",
+      "isbn": "3025252",
+      "img": "https://i.pinimg.com/originals/80/a5/1a/80a51a0b7293317a273207178aa12358.jpg",
+      "id": 5
+    },
+    {
+      "title": "Prueba libro 3",
+      "author": "Autor 3",
+      "isbn": "3025252",
+      "img": "https://i.pinimg.com/originals/80/a5/1a/80a51a0b7293317a273207178aa12358.jpg",
+      "id": 6
+    },
+    {
+      "title": "Libro 6",
+      "author": "Autor 6",
+      "isbn": "100100100",
+      "img": "https://i.pinimg.com/originals/80/a5/1a/80a51a0b7293317a273207178aa12358.jpg",
+      "id": 7
     }
   ]
 }

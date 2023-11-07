@@ -7,11 +7,11 @@ const btnCancel = document.getElementById('btn-cancel')
 bookForm.addEventListener('submit', (event) => {
   event.preventDefault()
 
-  if (!bookForm.checkValidity()) {
+  /* if (!bookForm.checkValidity()) {
     event.stopPropagation()
   }
 
-  bookForm.classList.add('was-validated')
+  bookForm.classList.add('was-validated') */
 
   const id = bookForm.id.value.trim()
   const title = bookForm.title.value.trim()
